@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rent Prediction</title>
+</head>
+<body>
+    <h2>House Rent Predictor</h2>
+    <form action="/predict" method="post">
+        Bedroom: <input type="number" name="bedroom" required><br><br>
+        Area (sqft): <input type="number" name="area" required><br><br>
+        Furnish Type: 
+        <select name="furnish_type">
+            <option>Unfurnished</option>
+            <option>Semi-Furnished</option>
+            <option>Furnished</option>
+        </select><br><br>
+        Bathroom: <input type="number" name="bathroom" required><br><br>
+        Property Type:
+        <select name="property_type">
+            <option>Apartment</option>
+            <option>Independent Floor</option>
+            <option>Independent House</option>
+            <option>Studio Apartment</option>
+            <option>Villa</option>
+            <option>Penthouse</option>
+        </select><br><br>
+        Locality: <input type="text" name="locality" required><br><br>
+        City: 
+        <select name="city">
+            <option>Ahmedabad</option>
+            <option>Bangalore</option>
+            <option>Chennai</option>
+            <option>Delhi</option>
+            <option>Hyderabad</option>
+            <option>Kolkata</option>
+            <option>Mumbai</option>
+            <option>Pune</option>
+        </select><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+    <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
